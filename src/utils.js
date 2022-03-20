@@ -1,4 +1,4 @@
-import {getToken} from "./auth/token";
+import {getToken, getUsername} from "./auth/token";
 
 export function authPost(url, body) {
     return fetch(url, {
@@ -26,4 +26,21 @@ export function authGet(url) {
         }
     })
         .then(data => data && data.json());
+}
+
+export function getSortedPlayers(room) {
+    let players = JSON.parse(JSON.stringify(room.players));
+    players.sort();
+    return players;
+}
+
+export function getCurrentPlayer(room) {
+    let players = getSortedPlayers(room);
+    if(!room.match)
+        return null;
+    return players[room.match.current_turn];
+}
+
+export function amCurrentPlayer(room) {
+    return getUsername() === getCurrentPlayer(room);
 }

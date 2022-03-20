@@ -1,7 +1,12 @@
 import {getUsername} from "../auth/token";
+import BottomBarAfterStart from "./BottomBarAfterStart";
+import {authPost} from "../utils";
 
-export default function BottomBar(props) {
-    const {room, join} = props;
+export default function BottomBar({room, join}) {
+
+    const startMatch = async () => {
+        await authPost(`/rooms/${room.id}/start`, null).then();
+    };
 
     let isJoined = room.players.includes(getUsername());
     const isMatchStarted = !!room.match;
@@ -14,8 +19,12 @@ export default function BottomBar(props) {
     if (isJoined) {
         if (!isMatchStarted && hasFreeSeat)
             return <button onClick={copyUrl}> copy link </button>;
-        else
-            return <p> TODO </p>;
+        else {
+            if (!isMatchStarted)
+                return <button onClick={startMatch}> start </button>;
+            else
+                return <BottomBarAfterStart room={room}/>
+        }
     }
 
     if(hasFreeSeat)

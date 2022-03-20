@@ -1,8 +1,8 @@
 import Player from "./Player";
+import {amCurrentPlayer, getSortedPlayers} from "../utils";
 
 export default function Table({room}) {
-    let players = JSON.parse(JSON.stringify(room.players));
-    players.sort();
+    let players = getSortedPlayers(room);
     while (players.length < 4)
         players.push('-');
 
@@ -24,7 +24,7 @@ export default function Table({room}) {
 
     let playersComponent = [];
     players.forEach((player, index) => {
-        playersComponent.push(<Player key={index} name={player} team={teams[index]}/>);
+        playersComponent.push(<Player key={index} isCurrent={amCurrentPlayer(room)} name={player} team={teams[index]}/>);
     });
 
     return <div>

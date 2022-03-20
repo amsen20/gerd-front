@@ -34,11 +34,14 @@ export default function Room(props) {
         };
     }
 
+    const updateRoom = async () => {
+        setRoom(await authGet(`/rooms/${roomId}/`));
+    };
+
     const join = async () => {
         await authPost(`/rooms/${roomId}/join`, null);
         setNeedWs(true);
-        const newRoom = await authGet(`/rooms/${roomId}/`);
-        setRoom(newRoom);
+        await updateRoom();
     };
 
     useEffect(() => {
@@ -70,6 +73,7 @@ export default function Room(props) {
         </p>;
 
     return <>
+        <Statistics room={room} />
         <Table room={room}/>
         <BottomBar room={room} join={join} />
     </>
