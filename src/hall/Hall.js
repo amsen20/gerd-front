@@ -5,7 +5,6 @@ import words from "random-words";
 
 export default function Hall (props) {
     let params = useParams();
-    console.log(params);
     let randomWords = require('random-words');
     let navigate = useNavigate();
 

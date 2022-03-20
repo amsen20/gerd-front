@@ -2,7 +2,7 @@ import {MATCH_STATE} from '../consts'
 import {amCurrentPlayer, authPost, getCurrentPlayer} from "../utils";
 
 export default function BottomBarAfterStart({room}) {
-    const {state} = room;
+    const {match: {state}} = room;
     const play = async () => {
         await authPost(`/rooms/${room.id}/play`, null).then();
     };
@@ -26,7 +26,7 @@ export default function BottomBarAfterStart({room}) {
         return <></>;
 
     return <div>
-        <button onClick={correct}>skip</button>
-        <button onClick={skip}>correct</button>
+        <button onClick={skip}>skip</button>
+        <button onClick={correct}>correct</button>
     </div>
 }

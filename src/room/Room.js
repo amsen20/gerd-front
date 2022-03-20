@@ -4,6 +4,7 @@ import {getToken, getUsername} from "../auth/token";
 import {authGet, authPost} from "../utils";
 import BottomBar from './BottomBar';
 import Table from "./Table";
+import Statistics from "./Statistics";
 
 export default function Room(props) {
     let [room, setRoom] = useState(null);
@@ -29,7 +30,6 @@ export default function Room(props) {
         let ws = await connectWebSocket(ticket);
         ws.onmessage = (event) => {
             const pushedRoom=JSON.parse(event.data);
-            console.log(pushedRoom.data);
             setRoom(pushedRoom.data);
         };
     }
