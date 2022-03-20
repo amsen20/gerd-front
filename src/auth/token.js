@@ -1,4 +1,5 @@
 import {navigate} from "react-router-dom";
+import {authPost} from "../utils";
 
 export function setToken(token) {
     sessionStorage.setItem('token', token);

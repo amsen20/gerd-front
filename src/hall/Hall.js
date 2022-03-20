@@ -1,9 +1,11 @@
 import {getToken, isAuth} from "../auth/token";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import words from "random-words";
 
 export default function Hall (props) {
+    let params = useParams();
+    console.log(params);
     let randomWords = require('random-words');
     let navigate = useNavigate();
 
@@ -26,7 +28,7 @@ export default function Hall (props) {
         })
             .then(data => data.json());
 
-        
+        navigate(`/${room.name}-${room.id}`);
     };
 
     return <>

@@ -8,9 +8,8 @@ import Room from "./room/Room";
 ReactDOM.render(
   <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Hall/>}>
-              <Route path=":roomNameId" element={<Room/>} />
-          </Route>
+          <Route path="/" element={<Hall/>} />
+          <Route path="/:roomNameId" element={<Room/>} />
           <Route path="/login" element={<Login/>} />
       </Routes>
   </BrowserRouter>
