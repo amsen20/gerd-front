@@ -1,4 +1,5 @@
 import {getToken, getUsername} from "./auth/token";
+import PN from "persian-number";
 
 export function authPost(url, body) {
     return fetch(url, {
@@ -84,3 +85,5 @@ export function getGuessingPlayer(room) {
 export function amCurrentPlayer(room) {
     return getUsername() === getCurrentPlayer(room);
 }
+
+export const getPersian = PN.convertEnToPe;

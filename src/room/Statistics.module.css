@@ -1,0 +1,41 @@
+* {
+    font-family: 'Scheherazade New', serif;
+}
+
+.statisticsHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataHolder {
+    background: #212A38;
+    width: 220px;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    justify-content: center;
+}
+
+.teamHolder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 30px;
+}
+
+p {
+    font-weight: 900;
+    color: #FFFFFF;
+}
+
+.timeHolder p {
+    margin-right: 20px;
+}
+
+.timeHolder {
+    direction: rtl;
+}

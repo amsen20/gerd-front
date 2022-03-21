@@ -1,5 +1,8 @@
 import {useEffect, useState} from "react";
 import {MATCH_STATE} from "../consts";
+import styles from "./Statistics.module.css"
+import {getClockLogo, teamCircle} from "../logo";
+import {getPersian} from "../utils";
 
 export default function Statistics({room}) {
     let [RemainingTime, setRemainingTime] = useState(0);
@@ -23,19 +26,32 @@ export default function Statistics({room}) {
     if(!room.match)
         return <></>;
 
-    return <div >
-        <p>
-            team one: {team_one_score}
-        </p>
-        <p>
-            team two: {team_two_score}
-        </p>
-        <p>
-            current round: {current_round}
-        </p>
-        <p>
-            current time: {RemainingTime}
-        </p>
+    return <div className={styles.statisticsHolder}>
+        <div className={styles.dataHolder}>
+            <div className={styles.teamHolder}>
+                {teamCircle(1)}
+                <p>
+                    {getPersian(team_one_score)}
+                </p>
+            </div>
+            <div className={styles.teamHolder}>
+                {teamCircle(2)}
+                <p>
+                    {getPersian(team_two_score)}
+                </p>
+            </div>
+        </div>
+        <div className={styles.dataHolder + " " + styles.timeHolder}>
+            {getClockLogo()}
+            <p>
+                {getPersian(RemainingTime)} ثانیه
+            </p>
+        </div>
+        <div className={styles.dataHolder}>
+            <p>
+                راند {getPersian(current_round)}
+            </p>
+        </div>
     </div>
 
 }
