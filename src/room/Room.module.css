@@ -3,6 +3,12 @@
     flex-direction: row;
 }
 
+@media only screen and (max-width: 768px) {
+    .roomHolder {
+        flex-direction: column;
+    }
+}
+
 .tableAndBarHolder {
     display: flex;
     flex-direction: column;
