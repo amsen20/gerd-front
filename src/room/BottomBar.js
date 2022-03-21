@@ -1,6 +1,7 @@
 import {getUsername} from "../auth/token";
 import BottomBarAfterStart from "./BottomBarAfterStart";
 import {authPost} from "../utils";
+import styles from "./bottomBar.module.css";
 
 export default function BottomBar({room, join}) {
 
@@ -18,17 +19,23 @@ export default function BottomBar({room, join}) {
 
     if (isJoined) {
         if (!isMatchStarted && hasFreeSeat)
-            return <button onClick={copyUrl}> copy link </button>;
+            return <button className={styles.copyLink} onClick={copyUrl}>
+                کپی کردن لینک اتاق
+            </button>;
         else {
             if (!isMatchStarted)
-                return <button onClick={startMatch}> start </button>;
+                return <button className={styles.start} onClick={startMatch}>
+                    شروع
+                </button>;
             else
                 return <BottomBarAfterStart room={room}/>
         }
     }
 
     if(hasFreeSeat)
-        return <button onClick={join}> Join </button>;
+        return <button className={styles.start} onClick={join}>
+            ورود به اتاق
+        </button>;
 
     return <p> room is full </p>;
 }

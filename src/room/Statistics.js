@@ -23,7 +23,7 @@ export default function Statistics({room}) {
     if(!room.match)
         return <></>;
 
-    return <div>
+    return <div >
         <p>
             team one: {team_one_score}
         </p>

@@ -1,0 +1,53 @@
+* {
+    font-family: 'Scheherazade New', serif;
+}
+
+.copyLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    background: #007EA8;
+    border-radius: 4px;
+    color: #FFFFFF;
+    min-height: 50px;
+    font-weight: 900;
+    border: none;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    background: #9FDBEF;
+    border-radius: 4px;
+    color: #000000;;
+    min-height: 50px;
+    font-weight: 900;
+    border: none;
+}
+
+.correct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    background: #12A72A;
+    border-radius: 4px;
+    color: #FFFFFF;;
+    min-height: 50px;
+    font-weight: 900;
+}
+
+.skip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    background: #B9371B;
+    border-radius: 4px;
+    color: #FFFFFF;;
+    min-height: 50px;
+    font-weight: 900;
+}

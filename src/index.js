@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Login from "./auth/Login";
 import Hall from "./hall/Hall";
 import Room from "./room/Room";
+import "./index.css"
 
 ReactDOM.render(
   <BrowserRouter>

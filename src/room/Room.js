@@ -5,6 +5,7 @@ import {authGet, authPost} from "../utils";
 import BottomBar from './BottomBar';
 import Table from "./Table";
 import Statistics from "./Statistics";
+import styles from "./Room.module.css"
 
 export default function Room(props) {
     let [room, setRoom] = useState(null);
@@ -72,9 +73,11 @@ export default function Room(props) {
             room is full
         </p>;
 
-    return <>
-        <Statistics room={room} />
-        <Table room={room}/>
-        <BottomBar room={room} join={join} />
-    </>
+    return <div className={styles.roomHolder}>
+        {room.match && <Statistics room={room} /> }
+        <div className={styles.tableAndBarHolder}>
+            <Table room={room}/>
+            <BottomBar room={room} join={join} />
+        </div>
+    </div>
 }

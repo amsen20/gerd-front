@@ -1,0 +1,42 @@
+.playerHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+}
+
+.playerName {
+    margin: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.up {
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    flex-direction: column-reverse;
+}
+
+.left {
+    left: 1%;
+    top: 50%;
+    transform: translate(0, -50%);
+    flex-direction: row-reverse;
+}
+
+.down {
+    top: 99%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    flex-direction: column;
+}
+
+.right {
+    left: 99%;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    flex-direction: row;
+}

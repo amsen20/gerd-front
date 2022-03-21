@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import {isAuth, loginUser, setToken, setUsername} from "./token";
 import {useNavigate} from "react-router-dom";
+import styles from "./login.module.css"
+import {getLogo} from "../logo";
 
 export default function Login (props) {
     const [username, setUserName] = useState();
@@ -26,19 +28,24 @@ export default function Login (props) {
     };
 
     return(
-        <div className="login-wrapper">
-            <h1>Please Log In</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Username</p>
-                    <input type="text" onChange={e => setUserName(e.target.value)} />
+        <div className={styles.loginHolder}>
+            {getLogo()}
+            <h1>
+                به بازی گرد خوش اومدید.
+            </h1>
+            <form className={styles.loginForm} onSubmit={handleSubmit}>
+                <label className={styles.label}>
+                    <p>نام کاربری:</p>
+                    <input className={styles.loginInput} type="text" onChange={e => setUserName(e.target.value)} placeholder={"نام کاربری را به انگلیسی وارد کنید"}  />
                 </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)} />
+                <label className={styles.label}>
+                    <p>کلمه عبور:</p>
+                    <input className={styles.loginInput} type="password" onChange={e => setPassword(e.target.value)} placeholder={"رمز عبور"} />
                 </label>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button className={styles.button} type="submit">
+                        ورود
+                    </button>
                 </div>
             </form>
         </div>

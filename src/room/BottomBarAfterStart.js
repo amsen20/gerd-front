@@ -1,5 +1,6 @@
 import {MATCH_STATE} from '../consts'
 import {amCurrentPlayer, authPost, getCurrentPlayer} from "../utils";
+import styles from "./bottomBar.module.css"
 
 export default function BottomBarAfterStart({room}) {
     const {match: {state}} = room;
@@ -15,7 +16,9 @@ export default function BottomBarAfterStart({room}) {
 
     if(state === MATCH_STATE.WAITING || state === MATCH_STATE.NEWBORN) {
         if (amCurrentPlayer(room))
-            return <button onClick={play}> start the play </button>
+            return <div onClick={play} className={styles.start} >
+                شروع
+            </div>
         else
             return <p>
                 {getCurrentPlayer(room)} should start the play.
@@ -26,7 +29,7 @@ export default function BottomBarAfterStart({room}) {
         return <></>;
 
     return <div>
-        <button onClick={skip}>skip</button>
-        <button onClick={correct}>correct</button>
+        <div className={styles.skip} onClick={skip}>skip</div>
+        <div className={styles.correct} onClick={correct}>correct</div>
     </div>
 }

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
+
+html {
+    width: 99%;
+    height: 99%;
+    font-family: 'Scheherazade New', serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: #004157;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
