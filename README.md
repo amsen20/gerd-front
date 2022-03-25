@@ -1,5 +1,5 @@
 # About the game
-An online multiplayer turn-based game in which players try to explain a word to their pairs without saying the word
+An online multiplayer turn-based game in which players try to explain a word to their pairs without saying the word.
 
 # Getting Started with Create React App
 
