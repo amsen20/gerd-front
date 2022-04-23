@@ -1,12 +1,6 @@
-.roomHolder {
-    display: flex;
-    flex-direction: row;
-}
-
-.tableAndBarHolder {
+.teamsCandidatesHolder {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
 }

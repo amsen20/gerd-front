@@ -1,0 +1,34 @@
+.firstTeamHolder {
+    padding: 10px;
+    border-bottom: 2px solid white;
+}
+
+.secondTeamHolder {
+    padding: 10px;
+    border-top: 2px solid white;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .teamsCandidateHolder {
+        width: 450px;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .teamsCandidateHolder {
+        width: 380px;
+    }
+}
+
+.teamsCandidateHolder {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    max-width: 450px;
+    background: #212A38;
+    margin: 20px;
+}
+
+.teamsCandidateSelected {
+    border: 2px solid #F79F79;
+}

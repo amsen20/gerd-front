@@ -19,12 +19,12 @@ export default function BottomBar({room, join}) {
 
     if (isJoined) {
         if (!isMatchStarted && hasFreeSeat)
-            return <button className={styles.copyLink} onClick={copyUrl}>
+            return <button className={styles.copyLink + " " + styles.bottomBarButton} onClick={copyUrl}>
                 کپی کردن لینک اتاق
             </button>;
         else {
             if (!isMatchStarted)
-                return <button className={styles.start} onClick={startMatch}>
+                return <button className={styles.start + " " + styles.bottomBarButton} onClick={startMatch}>
                     شروع
                 </button>;
             else
@@ -33,7 +33,7 @@ export default function BottomBar({room, join}) {
     }
 
     if(hasFreeSeat)
-        return <button className={styles.start} onClick={join}>
+        return <button className={styles.start + " " + styles.bottomBarButton} onClick={join}>
             ورود به اتاق
         </button>;
 

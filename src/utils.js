@@ -42,10 +42,10 @@ export function getCurrentPlayer(room) {
     return players[room.match.current_turn];
 }
 
-export function getTeams(room) {
+export function getTeamsByType(teamType) {
     let teams = []
 
-    switch (room.teams) {
+    switch (teamType) {
         case 1:
             teams = [1, 1, 2, 2];
             break;
@@ -59,7 +59,11 @@ export function getTeams(room) {
             console.error("bad teams");
     }
 
-    return teams;
+    return teams;    
+}
+
+export function getTeams(room) {
+    return getTeamsByType(room.teams);
 }
 
 function getAllIndexes(arr, val) {
@@ -87,3 +91,11 @@ export function amCurrentPlayer(room) {
 }
 
 export const getPersian = PN.convertEnToPe;
+
+export function getDevice() {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        return "mobile";
+    }else{
+        return "laptop";
+    }
+}

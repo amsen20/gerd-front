@@ -2,52 +2,55 @@
     font-family: 'Scheherazade New', serif;
 }
 
+.bottomBarButton {
+    font-weight: 900;
+    border: none;
+    border-radius: 16px;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .bottomBarButton {
+        width: 330px;
+        height: 64px;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .bottomBarButton {
+        width: 183px;
+        height: 45px;
+    }
+}
+
 .copyLink {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 300px;
     background: #007EA8;
-    border-radius: 4px;
     color: #FFFFFF;
-    min-height: 50px;
-    font-weight: 900;
-    border: none;
 }
 
 .start {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 300px;
-    background: #9FDBEF;
-    border-radius: 4px;
-    color: #000000;;
-    min-height: 50px;
-    font-weight: 900;
-    border: none;
+    background: #CEEAF7;
+    color: #000000;
 }
 
 .correct {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 300px;
     background: #12A72A;
-    border-radius: 4px;
     color: #FFFFFF;;
-    min-height: 50px;
-    font-weight: 900;
 }
 
 .skip {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 300px;
     background: #B9371B;
-    border-radius: 4px;
-    color: #FFFFFF;;
-    min-height: 50px;
-    font-weight: 900;
+    color: #FFFFFF;
 }

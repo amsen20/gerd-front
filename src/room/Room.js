@@ -6,6 +6,7 @@ import BottomBar from './BottomBar';
 import Table from "./Table";
 import Statistics from "./Statistics";
 import styles from "./Room.module.css"
+import Rearrange from "./rearrange/Rearrange";
 
 export default function Room(props) {
     let [room, setRoom] = useState(null);
@@ -67,6 +68,7 @@ export default function Room(props) {
 
     let hasFreeSeat = room.players.length < 4;
     let isJoined = room.players.includes(getUsername());
+    let isRearranging = !room.match && !hasFreeSeat && isJoined;
 
     if (!isJoined && !hasFreeSeat)
         return <p>
@@ -76,7 +78,7 @@ export default function Room(props) {
     return <div className={styles.roomHolder}>
         {room.match && <Statistics room={room} /> }
         <div className={styles.tableAndBarHolder}>
-            <Table room={room}/>
+            {isRearranging ? <Rearrange room={room} /> : <Table room={room}/> }
             <BottomBar room={room} join={join} />
         </div>
     </div>

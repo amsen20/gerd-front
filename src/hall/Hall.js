@@ -71,8 +71,8 @@ export default function Hall (props) {
                 </li>
             </ul>
         </div>
-        <div className={styles.create} onClick={createRoom}>
+        <button className={styles.create} onClick={createRoom}>
             ساخت اتاق جدید
-        </div>
+        </button>
     </div>;
 }

@@ -16,7 +16,7 @@ export default function BottomBarAfterStart({room}) {
 
     if(state === MATCH_STATE.WAITING || state === MATCH_STATE.NEWBORN) {
         if (amCurrentPlayer(room))
-            return <div onClick={play} className={styles.start} >
+            return <div onClick={play} className={styles.start + " " + styles.bottomBarButton} >
                 شروع
             </div>
         else
