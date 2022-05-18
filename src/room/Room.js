@@ -8,6 +8,8 @@ import styles from "./Room.module.css"
 import Rearrange from "./rearrange/Rearrange";
 import UpperStatistics from "./UpperStatistics";
 import BottomStatistics from "./BottomStatistics";
+import {MATCH_STATE} from '../consts'
+import Finished from "./FinishedPage";
 
 export default function Room(props) {
     let [room, setRoom] = useState(null);
@@ -73,9 +75,9 @@ export default function Room(props) {
     let isFinished = (room.match && room.match.state === MATCH_STATE.FINISHED);
 
     if (isFinished)
-        return <p>
-            تموم شد
-        </p>;
+        return <div className={styles.roomHolder}>
+            <Finished room={room} />
+        </div>;
 
     if (!isJoined && !hasFreeSeat)
         return <p>
