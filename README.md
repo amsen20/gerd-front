@@ -1,3 +1,6 @@
+# About the game
+An online multiplayer turn-based game in which players try to explain a word to their pairs without saying the word.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
