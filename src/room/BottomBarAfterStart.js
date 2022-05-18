@@ -1,5 +1,5 @@
 import {MATCH_STATE} from '../consts'
-import {amCurrentPlayer, authPost, getCurrentPlayer} from "../utils";
+import {amCurrentPlayer, authPost, getCurrentPlayer, getLastWord} from "../utils";
 import styles from "./bottomBar.module.css"
 
 export default function BottomBarAfterStart({room}) {
@@ -21,15 +21,22 @@ export default function BottomBarAfterStart({room}) {
             </div>
         else
             return <p>
-                {getCurrentPlayer(room)} should start the play.
+                .باید شروع کند {getCurrentPlayer(room)}
             </p>
     }
 
-    if(state === MATCH_STATE.FINISHED || (state === MATCH_STATE.PLAYING && !amCurrentPlayer(room)))
+    if(state === MATCH_STATE.FINISHED)
         return <></>;
+    
+    const showButtons = !(state === MATCH_STATE.PLAYING && !amCurrentPlayer(room));
 
-    return <div>
-        <div className={styles.skip} onClick={skip}>skip</div>
-        <div className={styles.correct} onClick={correct}>correct</div>
-    </div>
+    return <div className={styles.bottomBarAfterStartHolder}>
+        <p>
+            {getLastWord(room)}
+        </p>
+        {showButtons && <div className={styles.buttonsHolder}>
+            <button className={styles.skip + " " + styles.bottomBarButton} onClick={skip}>رد کن</button>
+            <button className={styles.correct + " " + styles.bottomBarButton} onClick={correct}>درست گفت</button>
+        </div>}
+    </div>;
 }

@@ -4,27 +4,38 @@
 
 .statisticsHolder {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    margin-bottom: 40px;
+}
+
+@media (min-aspect-ratio: 1/1) {
+    .dataHolder {
+        width: 80px;
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .dataHolder {
+        width: 60px;
+    }
 }
 
 .dataHolder {
-    background: #212A38;
-    width: 220px;
+    background: #364451;
     border-radius: 20px;
-    padding: 10px;
+    padding: 0px 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 5px;
+    margin: 0px 10px;
     justify-content: center;
 }
 
-.teamHolder {
+.scoreHolder {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-    margin: 0px 30px;
 }
 
 p {

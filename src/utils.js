@@ -99,3 +99,10 @@ export function getDevice() {
         return "laptop";
     }
 }
+
+export function getLastWord(room) {
+    let lastWord = '';
+    if(room.match && room.match.words && room.match.words.length > 0)
+        lastWord = room.match.words[room.match.words.length - 1].text;
+    return lastWord;
+}

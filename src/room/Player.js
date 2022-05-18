@@ -8,14 +8,14 @@ const getPlayer = (isJoined, team, isCurrent, isStarted) => {
     if (!isStarted)
         color = "#FFFFFF";
     else
-        color = team === 1 ? "#C7D338" : "#007EA8";
+        color = team === 1 ? "#F79F79" : "#007EA8";
 
     if(!isJoined)
-        return <svg className={styles.circles} viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        return <svg className={styles.circles} viewBox="-2 -2 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="35" cy="35" r="32.5" stroke={color} strokeWidth="5"/>
         </svg>
 
-    return <svg className={styles.circles} viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    return <svg className={styles.circles} viewBox="-2 -2 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
         {isCurrent ? <circle cx="35" cy="35" r="35" fill={color} stroke="#F6F8FC" strokeWidth="3" /> :
             <circle cx="35" cy="35" r="35" fill={color} />}
     </svg>;

@@ -23,18 +23,11 @@ export default function Table({room}) {
         );
     });
 
-    const isGuessingPlayer = getGuessingPlayer(room) === getUsername();
     let lastWord = '';
-    console.log(room)
     if(room.match && room.match.words && room.match.words > 0)
         lastWord = room.match.words[room.match.words.length - 1].text;
 
     return <div>
-        <div>
-            <p>
-                {isGuessingPlayer ? "try to guess!!" : lastWord}
-            </p>
-        </div>
         <div className={styles.table}>
             {playersComponent}
         </div>
