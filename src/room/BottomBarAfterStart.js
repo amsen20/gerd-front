@@ -1,5 +1,6 @@
+import { getUsername } from '../auth/token';
 import {MATCH_STATE} from '../consts'
-import {amCurrentPlayer, authPost, getCurrentPlayer, getLastWord} from "../utils";
+import {amCurrentPlayer, authPost, getCurrentPlayer, getGuessingPlayer, getLastWord} from "../utils";
 import styles from "./bottomBar.module.css"
 
 export default function BottomBarAfterStart({room}) {
@@ -29,10 +30,10 @@ export default function BottomBarAfterStart({room}) {
         return <></>;
     
     const showButtons = !(state === MATCH_STATE.PLAYING && !amCurrentPlayer(room));
-
+    
     return <div className={styles.bottomBarAfterStartHolder}>
         <p>
-            {getLastWord(room)}
+            {getGuessingPlayer(room) === getUsername() ? '!سعی کن حدس بزنی' : getLastWord(room)}
         </p>
         {showButtons && <div className={styles.buttonsHolder}>
             <button className={styles.skip + " " + styles.bottomBarButton} onClick={skip}>رد کن</button>

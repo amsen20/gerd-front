@@ -75,9 +75,7 @@ export default function Room(props) {
     let isFinished = (room.match && room.match.state === MATCH_STATE.FINISHED);
 
     if (isFinished)
-        return <div className={styles.roomHolder}>
-            <Finished room={room} />
-        </div>;
+        return <Finished room={room} />;
 
     if (!isJoined && !hasFreeSeat)
         return <p>
