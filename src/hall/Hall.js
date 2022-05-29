@@ -2,6 +2,7 @@ import {getToken, isAuth} from "../auth/token";
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect} from "react";
 import styles from "./Hall.module.css"
+import { apiServer } from "../consts";
 
 export default function Hall (props) {
     let params = useParams();
@@ -14,7 +15,7 @@ export default function Hall (props) {
     });
 
     const createRoom = async () => {
-        let room = await fetch('/rooms/', {
+        let room = await fetch(apiServer + '/rooms/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

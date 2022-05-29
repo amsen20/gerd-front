@@ -1,8 +1,9 @@
 import {getToken, getUsername} from "./auth/token";
 import PN from "persian-number";
+import { apiServer } from "./consts";
 
-export function authPost(url, body) {
-    return fetch(url, {
+export function authPost(resource, body) {
+    return fetch(apiServer + resource, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -18,8 +19,8 @@ export function authPost(url, body) {
         });
 }
 
-export function authGet(url) {
-    return fetch(url, {
+export function authGet(resource) {
+    return fetch(apiServer + resource, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

@@ -4,3 +4,5 @@ export const MATCH_STATE = {
     WAITING: 3,
     FINISHED: 4
 }
+
+export const apiServer = "https://gerdapi.emad.sh"
