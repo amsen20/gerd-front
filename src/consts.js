@@ -6,3 +6,4 @@ export const MATCH_STATE = {
 }
 
 export const apiServer = "https://gerdapi.emad.sh"
+export const wsServer = "wss://gerdapi.emad.sh"
