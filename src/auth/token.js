@@ -1,4 +1,5 @@
 import {navigate} from "react-router-dom";
+import { apiServer } from "../consts";
 import {authPost} from "../utils";
 
 export function setToken(token) {
@@ -27,7 +28,7 @@ export function isAuth() {
 
 
 export async function loginUser(userPass) {
-    return fetch( '/api-token-auth/', { // FIXME correct the urls
+    return fetch(apiServer + '/api-token-auth/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

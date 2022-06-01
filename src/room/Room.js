@@ -8,7 +8,7 @@ import styles from "./Room.module.css"
 import Rearrange from "./rearrange/Rearrange";
 import UpperStatistics from "./UpperStatistics";
 import BottomStatistics from "./BottomStatistics";
-import {MATCH_STATE} from '../consts'
+import {apiServer, MATCH_STATE, wsServer} from '../consts'
 import Finished from "./FinishedPage";
 
 export default function Room(props) {
@@ -21,7 +21,7 @@ export default function Room(props) {
 
     const connectWebSocket = (ticket) => {
         return new Promise((resolve, reject) => {
-            let server = new WebSocket(`ws://127.0.0.1:8000/rooms/${roomId}/?ticket=${ticket}`);
+            let server = new WebSocket(`${wsServer}/rooms/${roomId}/?ticket=${ticket}`);
             server.onopen = () => {
                 resolve(server);
             };
